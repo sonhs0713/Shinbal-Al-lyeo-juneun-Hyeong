@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
     const limit = Math.min(Number(req.query.limit) || 100, 200);
     const page = Math.max(Number(req.query.page) || 1, 1);
 
-    const query = { is_active: true };
+    const query = {};
     const [products, total] = await Promise.all([
       Product.find(query)
         .sort({ createdAt: -1 })
@@ -24,6 +24,7 @@ router.get('/', async (req, res, next) => {
       page,
       limit,
       total,
+      totalPages: Math.max(1, Math.ceil(total / limit)),
     });
   } catch (err) {
     next(err);
@@ -57,6 +58,7 @@ router.post('/', requireAuth, requireAdmin, async (req, res, next) => {
       color,
       colors,
       sizes,
+      shoe_size,
       is_active,
     } = req.body || {};
 
@@ -80,7 +82,7 @@ router.post('/', requireAuth, requireAdmin, async (req, res, next) => {
       image,
       color,
       colors,
-      sizes,
+      shoe_size: Array.isArray(shoe_size) ? shoe_size : sizes,
       is_active,
     });
 
@@ -94,6 +96,10 @@ router.post('/', requireAuth, requireAdmin, async (req, res, next) => {
 router.put('/:productId', requireAuth, requireAdmin, async (req, res, next) => {
   try {
     const update = { ...req.body };
+    if (!Array.isArray(update.shoe_size) && Array.isArray(update.sizes)) {
+      update.shoe_size = update.sizes;
+    }
+    delete update.sizes;
     const product = await Product.findOneAndUpdate(
       { product_id: req.params.productId },
       update,

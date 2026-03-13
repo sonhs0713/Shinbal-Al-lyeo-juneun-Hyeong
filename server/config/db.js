@@ -1,13 +1,21 @@
 const mongoose = require('mongoose');
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/shoppingmall';
+function getMongoUri() {
+  // Prefer explicit deployment env, but also support legacy variable names.
+  return (
+    process.env.MONGO_URI
+    || process.env.MONGODB_ATLAS_URL
+    || 'mongodb://localhost:27017/shoppingmall'
+  );
+}
 
 async function connectDb() {
-  if (!MONGO_URI) {
+  const mongoUri = getMongoUri();
+  if (!mongoUri) {
     throw new Error('MONGO_URI is not defined');
   }
 
-  await mongoose.connect(MONGO_URI, {
+  await mongoose.connect(mongoUri, {
     autoIndex: true,
   });
 
