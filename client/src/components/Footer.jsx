@@ -133,7 +133,7 @@ export default function Footer() {
 
         <div className="site-footer-meta">
           <p className="site-footer-company">
-            VIBE SHOP | 프리미엄 스포츠 슈즈와 스트리트웨어를 큐레이션하는 온라인 셀렉트 스토어
+          SHIN AL HYEONG | 프리미엄 스포츠 슈즈와 스트리트웨어를 큐레이션하는 온라인 셀렉트 스토어
           </p>
           <p className="site-footer-company-sub">
             운영시간 10:00 - 18:00 | 고객 문의는 주문 내역 또는 로그인 후 고객센터를 이용해 주세요.
@@ -149,7 +149,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="site-footer-copyright">
-            © 2026 VIBE SHOP. All Rights Reserved.
+            © 2026 SHIN AL HYEONG. All Rights Reserved.
           </p>
         </div>
       </div>
