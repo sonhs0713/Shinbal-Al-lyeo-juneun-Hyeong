@@ -1,0 +1,184 @@
+/* 기존 회원가입 페이지와 동일한 다크 + 그린 포인트 디자인 */
+.login-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.login-logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.login-nav a {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.login-nav a:hover {
+  color: #22c55e;
+}
+
+.login-main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.login-tag {
+  display: inline-block;
+  background: #22c55e;
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.login-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.login-title-accent {
+  color: #22c55e;
+}
+
+.login-desc {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0 0 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-error {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin: 0 0 0.25rem;
+}
+
+.login-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-label span {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-label input {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-label input::placeholder {
+  color: #555;
+}
+
+.login-label input:focus {
+  border-color: #22c55e;
+}
+
+.login-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.login-actions .btn {
+  padding: 0.85rem 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.login-actions .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-actions .btn-primary {
+  background: #22c55e;
+  color: #fff;
+}
+
+.login-actions .btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.login-actions .btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.login-helper {
+  margin: -0.25rem 0 0;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.login-helper a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.login-helper a:hover {
+  color: #22c55e;
+}
+
+.login-footer {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+}
+
+.login-footer a {
+  color: #22c55e;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}

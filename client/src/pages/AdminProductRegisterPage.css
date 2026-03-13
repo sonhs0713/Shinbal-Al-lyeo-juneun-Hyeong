@@ -1,0 +1,146 @@
+.admin-product-register {
+  max-width: 640px;
+}
+
+.admin-product-form {
+  margin-top: 1rem;
+}
+
+.admin-product-error {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.admin-product-success {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-form-row.admin-form-full {
+  grid-template-columns: 1fr;
+}
+
+.admin-sku-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.admin-sku-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-sku-btn {
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.admin-product-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.admin-product-form label span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.admin-product-form input,
+.admin-product-form select,
+.admin-product-form textarea {
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+
+.admin-product-form input::placeholder,
+.admin-product-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.admin-product-form input:focus,
+.admin-product-form select:focus,
+.admin-product-form textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+}
+
+.admin-product-form .admin-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-product-form .admin-actions .btn-primary {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.admin-product-form .admin-actions .btn-primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.admin-product-form .admin-actions .btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.admin-image-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-image-preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.admin-image-preview-wrap {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-image-preview {
+  width: 100%;
+  height: 100%;
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: cover;
+  display: block;
+}
