@@ -41,6 +41,7 @@ function buildBrowseMenus(products) {
             .slice(0, 6)
             .map((product) => ({
               label: product.product_id || product.sku || '상품',
+              productId: product.product_id || '',
               filters: { gender: genderKey, q: product.product_id || product.sku || '' },
             })),
         },
@@ -58,6 +59,7 @@ function buildBrowseMenus(products) {
           title: '최신 상품',
           items: latestProducts.map((product) => ({
             label: product.product_id || product.sku || '상품',
+            productId: product.product_id || '',
             filters: { q: product.product_id || product.sku || '' },
           })),
         },
@@ -205,6 +207,15 @@ export default function Navbar({ user, onLogout }) {
     moveToProductSearch({ q: searchKeyword });
   }, [moveToProductSearch, searchKeyword]);
 
+  const handleBrowseItemClick = useCallback((item) => {
+    if (item?.productId) {
+      navigate(`/products/${encodeURIComponent(item.productId)}`);
+      setBrowseOpen(false);
+      return;
+    }
+    moveToProductSearch(item?.filters || {});
+  }, [moveToProductSearch, navigate]);
+
   const handleMenuOpen = useCallback((menuKey) => {
     if (browseCloseTimeoutRef.current) {
       clearTimeout(browseCloseTimeoutRef.current);
@@ -286,7 +297,7 @@ export default function Navbar({ user, onLogout }) {
                             key={`${section.title}-${item.label}`}
                             type="button"
                             className="header-mega-link"
-                            onClick={() => moveToProductSearch(item.filters)}
+                            onClick={() => handleBrowseItemClick(item)}
                           >
                             {item.label}
                           </button>

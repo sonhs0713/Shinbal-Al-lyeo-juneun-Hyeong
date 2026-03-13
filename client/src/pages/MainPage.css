@@ -586,15 +586,22 @@
 }
 
 .browse-layout {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 2rem;
+  width: 100%;
+  align-items: start;
+  justify-content: flex-start;
 }
 
 .browse-sidebar {
   position: sticky;
   top: 110px;
   align-self: start;
+  flex: 0 0 280px;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
   padding: 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
@@ -667,7 +674,14 @@
 }
 
 .browse-content {
+  flex: 1 1 auto;
   min-width: 0;
+  width: 100%;
+}
+
+.browse-content .main-products-muted {
+  margin: 0;
+  text-align: left;
 }
 
 .main-products-grid {
@@ -837,11 +851,16 @@
   }
 
   .browse-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .browse-sidebar {
     position: static;
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
   }
 
   .main-campaign-banner-overlay {
