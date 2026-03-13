@@ -2,21 +2,33 @@ const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema(
   {
+    sku: {
+      type: String,
+      trim: true,
+    },
     product_id: {
       type: String,
       required: true,
       unique: true,
       trim: true,
     },
-    sku: {
-      type: String,
-      trim: true,
-    },
-    brand: {
-      type: String,
-      trim: true,
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
     },
     category: {
+      type: String,
+      trim: true,
+    },
+    image: [
+      {
+        type: String,
+        trim: true,
+      },
+    ],
+    shoe_size: [Number],
+    color: {
       type: String,
       trim: true,
     },
@@ -25,31 +37,13 @@ const productSchema = new mongoose.Schema(
       enum: ['male', 'female', 'unisex', ''],
       default: '',
     },
-    price: {
-      type: Number,
-      required: true,
-      min: 0,
+    brand: {
+      type: String,
+      trim: true,
     },
     description: {
       type: String,
       trim: true,
-    },
-    image: [{
-      type: String,
-      trim: true,
-    }],
-    color: {
-      type: String,
-      trim: true,
-    },
-    colors: [{
-      type: String,
-      trim: true,
-    }],
-    sizes: [Number],
-    is_active: {
-      type: Boolean,
-      default: true,
     },
   },
   {
