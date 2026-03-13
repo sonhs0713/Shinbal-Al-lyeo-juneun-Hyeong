@@ -1,0 +1,9 @@
+{
+  "name": "shinbal-shop-monorepo",
+  "private": true,
+  "scripts": {
+    "start": "npm start --prefix server",
+    "heroku-postbuild": "npm install --prefix server"
+  }
+}
+
